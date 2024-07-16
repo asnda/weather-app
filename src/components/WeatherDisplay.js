@@ -12,7 +12,7 @@ const weatherIcons = {
 const WeatherDisplay = ({ weatherData }) => {
   if (!weatherData) return <div className="weather-display">No data available</div>;
 
-  const { name, main, weather } = weatherData;
+  const { name, main, weather, wind } = weatherData;
   const weatherDescription = weather[0].main;
   const weatherIcon = weatherIcons[weatherDescription];
 
@@ -31,6 +31,7 @@ const WeatherDisplay = ({ weatherData }) => {
         <p>{weatherDescription}</p>
         <p>Temperature: {main.temp}°C</p>
         <p>Humidity: {main.humidity}%</p>
+        <p>Wind Speed: {wind.speed} m/s</p>
       </div>
     </div>
   );
